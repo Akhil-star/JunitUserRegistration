@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistrationTest {
     @Test
-    public void givenLastName_whenMatches_ShouldReturnTrue() {
+    public void givenEmail_whenMatches_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
         String  emailId1 = userRegistration.emailId("mayabrahma@gmail.com.com");
         String  emailId2 = userRegistration.emailId("akl123@gmail.a");
