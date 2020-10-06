@@ -2,7 +2,7 @@ package com.cg.junit;
 
 public class UserRegistration {
 
-    public String lastName(String lastname) {
-        return lastname;
+    public String emailId(String emailid) {
+        return emailid;
     }
 }
