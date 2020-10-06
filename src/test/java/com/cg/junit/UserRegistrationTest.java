@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistrationTest {
     @Test
-    public void givenLastName_whenMatches_ShouldReturnTrue() {
+    public void givenPhno_whenMatches_ShouldReturn() {
         UserRegistration userRegistration = new UserRegistration();
         String  phoneNo1 = userRegistration.phoneNo("91 8667772345");
         String  phoneNo2 = userRegistration.phoneNo("9 9876556789");
