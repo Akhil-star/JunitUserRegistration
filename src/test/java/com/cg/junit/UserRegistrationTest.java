@@ -7,14 +7,14 @@ import java.util.regex.Pattern;
 
 public class UserRegistrationTest {
     @Test
-    public void givenFirstName_whenMatches_ShouldReturnTrue() {
+    public void givenLastName_whenMatches_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        String  firstname = userRegistration.firstName("Akhil");
-        String firstname1 = userRegistration.firstName("akki");
+        String  lastname = userRegistration.lastName("Mayabrahma");
+        String  lastname1 = userRegistration.lastName("ak");
         String regex = "^[A-Z]"+"[A-Za-z]{2,}$";
         Pattern p =Pattern.compile(regex);
-        Assert.assertEquals(true , firstname.matches( p.pattern() ));
-        Assert.assertEquals(false,firstname1.matches( p.pattern() ));
+        Assert.assertEquals(true , lastname.matches( p.pattern() ));
+        Assert.assertEquals(false,lastname1.matches( p.pattern() ));
 
     }
 }
