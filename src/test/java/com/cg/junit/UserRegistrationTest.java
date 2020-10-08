@@ -26,14 +26,14 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_whenEntered_shouldReturnTrue() throws InvalidDetailsException {
             UserRegistration userRegistration=new UserRegistration();
-            Assert.assertTrue( userRegistration.password( "na" ) );
+            Assert.assertTrue( userRegistration.password( "Akhilkumasr$434" ) );
         }
 
 
     @Test
     public void givenString_whenEntered_shouldReturnSad() throws InvalidDetailsException {
         UserRegistration userRegistration=new UserRegistration();
-        Assert.assertEquals( "happy", userRegistration.happySad( " " ) );
+        Assert.assertEquals( "happy", userRegistration.happySad( "Happy" ) );
     }
 
 

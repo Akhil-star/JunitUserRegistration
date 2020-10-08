@@ -62,4 +62,5 @@ public class UserRegistration {
             throw new InvalidDetailsException( "Enter valid message" );
         }
     }
+
 }
