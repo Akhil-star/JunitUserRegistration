@@ -51,16 +51,10 @@ public class UserRegistration {
             throw new InvalidDetailsException( "Enter valid password" );
         }
     }
+    
 
-    public String happySad(String message) throws InvalidDetailsException {
-        try {
-            if (message.contains( "sad" ))
-                return "sad";
-            else
-                return "happy";
-        } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter valid message" );
-        }
+    public static void main(String[] args) {
+         System.out.println("Welcome to User Registration");
     }
 
 }

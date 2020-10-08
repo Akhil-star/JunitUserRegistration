@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.junit.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-08T02:46:26" hostname="DESKTOP-AURK5V2" time="0.003">
+<testsuite name="com.cg.junit.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-08T03:51:23" hostname="DESKTOP-AURK5V2" time="0.002">
   <properties/>
-  <testcase name="givenPassword_whenEntered_shouldReturnTrue" classname="com.cg.junit.UserRegistrationTest" time="0.003"/>
+  <testcase name="givenFirstName_whenEntered_shouldReturnTrue" classname="com.cg.junit.UserRegistrationTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
