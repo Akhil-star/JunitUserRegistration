@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.junit.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-06T15:52:22" hostname="DESKTOP-AURK5V2" time="0.002">
+<testsuite name="com.cg.junit.UserRegistrationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-10-09T05:59:10" hostname="DESKTOP-AURK5V2" time="0.003">
   <properties/>
-  <testcase name="givenFirstName_whenMatches_ShouldReturnTrue" classname="com.cg.junit.UserRegistrationTest" time="0.002"/>
+  <testcase name="givenFirstName_whenNotProper_shouldReturnFalse" classname="com.cg.junit.UserRegistrationTest" time="0.003"/>
+  <testcase name="givenFirstName_whenSpecialChar_shouldReturnFalse" classname="com.cg.junit.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenFirstName_whenProper_shouldReturnTrue" classname="com.cg.junit.UserRegistrationTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
