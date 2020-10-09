@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.junit.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-09T10:45:22" hostname="DESKTOP-AURK5V2" time="0.009">
+<testsuite name="com.cg.junit.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-09T10:53:44" hostname="DESKTOP-AURK5V2" time="0.012">
   <properties/>
-  <testcase name="givenFirstName_whenProper_shouldReturnTrue" classname="com.cg.junit.UserRegistrationTest" time="0.009"/>
+  <testcase name="givenEmail_whenNotProper_shouldReturnExceptionmsg" classname="com.cg.junit.UserRegistrationTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[com.cg.junit.InvalidDetailsException: Enter valid Name
-	at com.cg.junit.UserRegistration.name(UserRegistration.java:17)
-	at com.cg.junit.UserRegistrationTest.givenFirstName_whenProper_shouldReturnTrue(UserRegistrationTest.java:14)
+  <system-err><![CDATA[com.cg.junit.InvalidDetailsException: Enter valid emailId
+	at com.cg.junit.UserRegistration.emailId(UserRegistration.java:42)
+	at com.cg.junit.UserRegistrationTest.givenEmail_whenNotProper_shouldReturnExceptionmsg(UserRegistrationTest.java:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
