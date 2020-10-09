@@ -2,47 +2,22 @@ package com.cg.junit;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.regex.Pattern;
-
+@RunWith( Parameterized.class )
 public class UserRegistrationTest {
 
-    private final String email;
-    private boolean expected_result;
+    private  String emailId;
+    private  boolean expected;
 
     UserRegistration userRegistration = new UserRegistration();
 
-    public UserRegistrationTest(String email, boolean expected_result) {
-        this.email = email;
-        this.expected_result = expected_result;
-    }
-
-    @Test
-    public void givenFirstName_whenEntered_shouldReturnTrue() {
-        Assert.assertTrue( userRegistration.name( "Akhil" ) );
-    }
-
-    @Test
-    public void givenLastName_whenEntered_shouldReturnTrue() {
-        Assert.assertTrue( userRegistration.name( "Kumar" ) );
-    }
-
-    @Test
-    public void givenMobile_whenEntered_shouldReturnTrue() {
-        Assert.assertTrue( userRegistration.phNo( "91 2581475625" ) );
-    }
-
-    @Test
-    public void givenPassword_whenEntered_shouldReturnTrue() {
-        Assert.assertTrue( userRegistration.password( "Akhilakki@2345" ) );
-    }
-
-    @Test
-    public void givenString_whenEntered_shouldReturnSad() {
-        Assert.assertEquals( "happy", userRegistration.happySad( "happy" ) );
+    public UserRegistrationTest(String emailId, boolean expected) {
+        this.emailId = emailId;
+        this.expected = expected;
     }
 
     @Parameterized.Parameters
@@ -57,9 +32,8 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenEmail_whenEntered_shouldReturnCorrect() {
-        System.out.println( "Parameterized email : " + email );
-        Assert.assertEquals( expected_result, userRegistration.emailId( email ) );
+    public void givenEmail_whenEntered_shouldReturnEqual() {
+        Assert.assertEquals( expected, userRegistration.emailId( emailId ) );
     }
 }
 
