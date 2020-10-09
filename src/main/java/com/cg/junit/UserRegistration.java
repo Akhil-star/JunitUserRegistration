@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static boolean name(String fname) {
+    public static boolean name(String name) {
         String regex = "^[A-Z]{1}[a-zA-Z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
-        return  pattern.matcher(fname).matches();
+        return  pattern.matcher(name).matches();
     }
 
     public static boolean emailId(String email) {
