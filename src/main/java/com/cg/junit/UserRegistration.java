@@ -6,36 +6,57 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static boolean name(String name){
-        String regex = "^[A-Z]{1}[a-zA-Z]{2,}$";
+    public static boolean name(String name) throws InvalidDetailsException {
+        String regex = "^[A-Z][a-zA-Z]{2,}$";
         Pattern p = Pattern.compile( regex );
         Matcher m = p.matcher( name );
-        return m.matches();
+        if( m.matches()) {
+            return true;
+        }
+        else{
+            throw new InvalidDetailsException( "Enter valid Name" );
+        }
     }
 
-    public static boolean phNo(String num) {
+    public static boolean phNo(String num) throws InvalidDetailsException {
         String regex = "^[0-9]{2}\\s[0-9]{10}$";
         Pattern p = Pattern.compile( regex );
         Matcher m = p.matcher( num );
-        return m.matches();
+        if( m.matches()) {
+            return true;
+        }
+        else{
+            throw new InvalidDetailsException( "Enter valid Mobile Number" );
+        }
     }
 
-    public static boolean emailId(String email) {
+
+    public static boolean emailId(String email) throws InvalidDetailsException {
         String regex = "^[A-Za-z0-9]{1}[A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9]+(\\.[A-Za-z0-9]+){0,1}(\\.[A-Za-z]{2,})$";
         Pattern p = Pattern.compile( regex );
         Matcher m = p.matcher( email );
-        return m.matches();
+        if( m.matches()) {
+            return true;
+        }
+        else{
+            throw new InvalidDetailsException( "Enter valid emailId" );
+        }
     }
 
-    public static boolean password(String pass) {
+    public static boolean password(String pass) throws InvalidDetailsException {
         String regex = "^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?!.*[<>`])" + "(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)" + ".{8,}$";
         Pattern p = Pattern.compile( regex );
         Matcher m = p.matcher( pass );
-        return m.matches();
+        if(m.matches()){
+            return true;
+        }else{
+            throw new InvalidDetailsException( "Enter the Valid Password" );
+        }
     }
 
-    public static void main(String[] args) {
-        System.out.println( "Welcome to User Registration" );
+
+    public static void main(String[] args) throws InvalidDetailsException {
+        System.out.println("Welcome to User Registration");
         Scanner sc = new Scanner( System.in );
         UserRegistration userRegistration = new UserRegistration();
         System.out.println( "Enter First name " );
