@@ -8,7 +8,7 @@ public class UserRegistrationTest {
     UserRegistration userRegistration = new UserRegistration();
 
     @Test
-    public void givenFirstName_whenNotProper_shouldReturnExceptionmsg() throws InvalidDetailsException {
+    public void givenFirstName_whenNotProper_shouldReturnExceptionmsg()   {
         try {
             UserRegistration userRegistration = new UserRegistration();
             Assert.assertTrue( userRegistration.name( " " ) );
@@ -18,7 +18,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenLastName_whenNotProper_shouldReturnExceptionmsg() throws InvalidDetailsException {
+    public void givenLastName_whenNotProper_shouldReturnExceptionmsg()  {
         try {
             UserRegistration userRegistration = new UserRegistration();
             Assert.assertTrue( userRegistration.name( null ) );
@@ -28,7 +28,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenMobile_whenNotProper_shouldReturnExceptionmsg() throws InvalidDetailsException {
+    public void givenMobile_whenNotProper_shouldReturnExceptionmsg()  {
         try {
             UserRegistration userRegistration = new UserRegistration();
             Assert.assertTrue( userRegistration.phNo( "91 25814756" ) );
@@ -38,7 +38,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenPassword_whenNotProper_shouldReturnExceptionmsg() throws InvalidDetailsException {
+    public void givenPassword_whenNotProper_shouldReturnExceptionmsg() {
         try {
             UserRegistration userRegistration = new UserRegistration();
             Assert.assertTrue( userRegistration.password( "akhil" ) );
@@ -48,7 +48,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenEmail_whenNotProper_shouldReturnExceptionmsg() throws InvalidDetailsException {
+    public void givenEmail_whenNotProper_shouldReturnExceptionmsg()  {
         try {
             UserRegistration userRegistration = new UserRegistration();
             Assert.assertEquals( true, userRegistration.emailId( "akhilkumar@.com" ) );
