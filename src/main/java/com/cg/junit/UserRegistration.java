@@ -8,12 +8,8 @@ public class UserRegistration {
 
     public static boolean name(String name) {
         String regex = "^[A-Z][a-zA-Z]{2,}$";
-        Pattern p = Pattern.compile( regex );
-        if (name == null) {
-            return false;
-        }
-        Matcher m = p.matcher( name );
-        return m.matches();
+        Pattern pattern = Pattern.compile( regex );
+        return pattern.matcher( name ).matches();
     }
 
     public static void main(String[] args) {
