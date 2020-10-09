@@ -6,50 +6,49 @@ import org.junit.Test;
 public class UserRegistrationTest {
 
     @Test
-    public void givenFirstName_whenEntered_shouldReturnTrue() throws InvalidDetailsException {
+    public void givenFirstName_whenProper_shouldReturnTrue() throws InvalidDetailsException {
         try {
             UserRegistration userRegistration = new UserRegistration();
-            Assert.assertTrue( userRegistration.name( "Akhil" ) );
+            Assert.assertTrue( userRegistration.name( " " ) );
         } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter the valid first name" );
+           e.printStackTrace();
         }
     }
     @Test
-    public void givenLastName_whenEntered_shouldReturnTrue() throws InvalidDetailsException {
+    public void givenLastName_whenProper_shouldReturnTrue() throws InvalidDetailsException {
         try {
             UserRegistration userRegistration = new UserRegistration();
-            Assert.assertTrue( userRegistration.name( "Kumar" ) );
+            Assert.assertTrue( userRegistration.name( null ) );
         } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter the valid last name" );
+            e.printStackTrace();
         }
     }
     @Test
-    public void givenMobile_whenEntered_shouldReturnTrue() throws InvalidDetailsException {
+    public void givenMobile_whenProper_shouldReturnTrue() throws InvalidDetailsException {
         try {
             UserRegistration userRegistration = new UserRegistration();
-            Assert.assertTrue( userRegistration.phNo( "91 2581475625" ) );
+            Assert.assertTrue( userRegistration.phNo( "91 25814756" ) );
         } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter the valid mobile number" );
+            e.printStackTrace();
         }
     }
     @Test
-    public void givenPassword_whenEntered_shouldReturnTrue() throws InvalidDetailsException {
+    public void givenPassword_whenProper_shouldReturnTrue() throws InvalidDetailsException {
         try {
             UserRegistration userRegistration = new UserRegistration();
-            Assert.assertTrue( userRegistration.password( "Akhilkumasr$434" ) );
+            Assert.assertTrue( userRegistration.password( "akhil") );
         } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter the valid password" );
+            e.printStackTrace();
         }
     }
-    
 
     @Test
-    public void givenEmail_whenEntered_shouldReturnCorrect() throws InvalidDetailsException {
+    public void givenEmail_whenProper_shouldReturnCorrect() throws InvalidDetailsException {
         try {
             UserRegistration userRegistration = new UserRegistration();
-            Assert.assertEquals( true, userRegistration.emailId( "akhilkumar@gmail.com" ) );
+            Assert.assertEquals( true, userRegistration.emailId( "akhilkumar@.com" ) );
         } catch (Exception e) {
-            throw new InvalidDetailsException( "Enter valid email" );
+            e.printStackTrace();
         }
     }
 }
