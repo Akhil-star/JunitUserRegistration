@@ -1,50 +1,30 @@
 package com.cg.junit;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class UserRegistration {
-    
-    public static boolean name(String name) {
-        String regex = "^[A-Z]{1}[a-zA-Z]{2,}$";
-        Pattern pattern = Pattern.compile(regex);
-        return  pattern.matcher(name).matches();
-    }
-
-    public static boolean emailId(String email) {
-        String regex = "^[A-Za-z0-9]{1}[A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9]+(\\.[A-Za-z0-9]+){0,1}(\\.[A-Za-z]{2,})$";
-        Pattern p = Pattern.compile( regex );
-        Matcher m = p.matcher( email );
-        return m.matches();
-    }
-
-    public static boolean phNo(String num) {
-        String regex = "^[0-9]{2}\\s[0-9]{10}$";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(num);
-        return m.matches();
-    }
-
-    public static boolean password(String pass) {
-        String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s)[a-zA-Z0-9]*[^a-zA-Z0-9\\s]{1}[a-zA-Z0-9]*$";
-        Pattern p = Pattern.compile( regex );
-        Matcher m = p.matcher( pass );
-        return m.matches();
-    }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner( System.in );
-        UserRegistration userRegistration = new UserRegistration();
-        System.out.println("Enter the First name");
-        System.out.println(userRegistration.name(sc.nextLine()));
-        System.out.println("Enter the last name");
-        System.out.println(userRegistration.name(sc.nextLine()));
-        System.out.println("Enter the EmailId");
-        System.out.println(userRegistration.emailId(sc.nextLine()));
-        System.out.println( "Enter Phone number " );
-        System.out.println( userRegistration.phNo( sc.nextLine() ) );
-        System.out.println( "Enter Password " );
-        System.out.println( userRegistration.password( sc.nextLine() ) );
+        Scanner sc=new Scanner( System.in );
+
+        Validate name = (entry -> entry.matches( "^[A-Z]{1}[a-zA-Z]{2,}$" ) ? true : false);
+        Validate email = (entry -> entry.matches( "^[A-Za-z0-9]{1}[A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9]+(\\.[A-Za-z0-9]+){0,1}(\\.[A-Za-z]{2,})$" ) ? true : false);
+        Validate phno = (entry -> entry.matches( "^[0-9]{2}\\s[0-9]{10}$" ) ? true : false);
+        Validate password = (entry -> entry.matches( "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s)[a-zA-Z0-9]*[^a-zA-Z0-9\\s]{1}[a-zA-Z0-9]*$" ) ? true : false);
+
+        System.out.println("validate First name");
+        System.out.println(name.validateEntry(sc.nextLine()));
+        System.out.println("validate Last name");
+        System.out.println(name.validateEntry(sc.nextLine()));
+        System.out.println("validate email");
+        System.out.println(email.validateEntry(sc.nextLine()));
+        System.out.println("validate phone number");
+        System.out.println(phno.validateEntry(sc.nextLine()));
+        System.out.println("validate password");
+        System.out.println(password.validateEntry(sc.nextLine()));
     }
+}
+@FunctionalInterface
+interface Validate{
+    public boolean validateEntry(String entry);
 }
